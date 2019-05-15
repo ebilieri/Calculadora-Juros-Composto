@@ -1,7 +1,9 @@
-﻿namespace CalculaJuros.Services
+﻿using CalculaJuros.Models;
+
+namespace CalculaJuros.Services
 {
     public interface ICalculaJurosService
     {
-        decimal CalculaJuros(double valorInicial, int tempo);
+        decimal CalculaJuros(CalcularJuros calcularJuros);
     }
 }

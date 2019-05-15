@@ -1,4 +1,5 @@
-﻿using CalculaJuros.Services;
+﻿using CalculaJuros.Models;
+using CalculaJuros.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -15,12 +16,14 @@ namespace CalculaJurosAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(decimal valorInicial, int meses)
+        public IActionResult Get(double valorInicial, int meses)
 
         {
             try
             {
-                decimal valorFinal = _calculaJurosService.CalculaJuros(Convert.ToDouble (valorInicial), meses);
+                CalcularJuros calculaJuros = new CalcularJuros(valorInicial, meses);
+
+                decimal valorFinal = _calculaJurosService.CalculaJuros(calculaJuros);
                 return Ok(valorFinal.ToString("N2"));
             }
             catch (Exception ex)
