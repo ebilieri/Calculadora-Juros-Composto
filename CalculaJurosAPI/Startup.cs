@@ -29,7 +29,7 @@ namespace CalculaJurosAPI
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddScoped<ICalculaJurosService, CalculaJurosComposto>();
+            services.AddScoped<ICalculaJurosService, CalculaJurosCompostoService>();
 
             services.AddSwaggerGen(options =>
             {

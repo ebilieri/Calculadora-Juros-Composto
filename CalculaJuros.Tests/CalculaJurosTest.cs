@@ -11,7 +11,7 @@ namespace CalculaJuros.Tests
 
         public CalculaJurosTest()
         {
-            _calculaJurosService = new CalculaJurosComposto();
+            _calculaJurosService = new CalculaJurosCompostoService();
         }
 
         [Fact]

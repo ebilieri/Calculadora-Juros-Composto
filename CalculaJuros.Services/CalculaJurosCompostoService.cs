@@ -3,7 +3,7 @@ using System;
 
 namespace CalculaJuros.Services
 {
-    public class CalculaJurosComposto : ICalculaJurosService
+    public class CalculaJurosCompostoService : ICalculaJurosService
     {
         /// <summary>
         /// VF = VI x (1  + taxa)^tempo
@@ -17,9 +17,7 @@ namespace CalculaJuros.Services
         /// <param name="calcularJuros"></param>
         /// <returns>Valor Final</returns>
         public decimal CalculaJuros(CalcularJuros calcularJuros)
-        {
-            
-
+        {           
             double taxa = 0.01;
             decimal valorFinal = Convert.ToDecimal(calcularJuros.ValorInicial * Math.Pow(1 + taxa, calcularJuros.Tempo));
 

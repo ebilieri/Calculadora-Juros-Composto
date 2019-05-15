@@ -17,11 +17,10 @@ namespace CalculaJurosAPI.Controllers
 
         [HttpGet]
         public IActionResult Get(double valorInicial, int meses)
-
         {
             try
             {
-                CalcularJuros calculaJuros = new CalcularJuros(valorInicial, meses);
+                var calculaJuros = new CalcularJuros(valorInicial, meses);
 
                 decimal valorFinal = _calculaJurosService.CalculaJuros(calculaJuros);
                 return Ok(valorFinal.ToString("N2"));
