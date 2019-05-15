@@ -20,9 +20,13 @@ namespace CalculaJuros.Services
             //tempo é o tempo total da aplicação.
 
             double taxa = 0.01;
-            double valorFinal = Math.Round(Convert.ToDouble(valorInicial) * Math.Pow(1 + taxa, tempo), 2);
+            decimal valorFinal = Convert.ToDecimal(valorInicial * Math.Pow(1 + taxa, tempo));
 
-            return Convert.ToDecimal(valorFinal);
+            return HelpersService.TruncateDecimal2(valorFinal);
         }
+
+
+        
+
     }
 }
